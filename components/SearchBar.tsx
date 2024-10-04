@@ -78,7 +78,7 @@ const SearchBar = () => {
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
-      <SearchButton otherClasses="max-sm:hidden" />
+      <SearchButton otherClasses="max-sm:hidden absolute right-1 border border-slate-200 rounded-full" />
     </form>
   );
 };
