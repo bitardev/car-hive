@@ -32,6 +32,20 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
   const { make, model, year } = car;
+  const items = [
+    "pspc0070",
+    "pspc0075",
+    "pspc0014",
+    "imagin-grey",
+    "imagin-red",
+    "imagin-black",
+  ];
+  const randomIndex = Math.floor(Math.random() * items.length);
+  const randomValue = items[randomIndex];
+  // const itemsAngle = ["22", "18", "10", "21"];
+  // const randomIndexAngle = Math.floor(Math.random() * itemsAngle.length);
+  // const randomValueAngle = itemsAngle[randomIndexAngle];
+
   url.searchParams.append(
     "customer",
     process.env.NEXT_PUBLIC_IMAGIN_API_KEY || ""
@@ -39,6 +53,8 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   url.searchParams.append("make", make);
   url.searchParams.append("modelFamily", model.split(" ")[0]);
   url.searchParams.append("zoomType", "fullscreen");
+  url.searchParams.append("bodySize", "5");
+  url.searchParams.append("paintId", "imagin-black");
   url.searchParams.append("modelYear", `${year}`);
   // url.searchParams.append('zoomLevel', zoomLevel);
   url.searchParams.append("angle", `${angle}`);
