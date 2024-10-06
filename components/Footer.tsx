@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
-            src={"/logo.svg"}
+            src={"/logo_hive.svg"}
             alt="logo"
-            width={118}
+            width={70}
             height={18}
             className="object-contain"
           />
